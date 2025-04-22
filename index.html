@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Scanner</title>
+
+  <!-- Orbitron font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Controls -->
+  <div class="controls-container">
+    <button id="scanBtn" class="btn" title="Scan">
+      <img src="https://cdn-icons-png.flaticon.com/512/10605/10605177.png" alt="Scan" class="icon" />
+    </button>
+    <button id="uploadBtn" class="btn" title="Upload">
+      <img src="icons/upload.png" alt="Upload" class="icon" />
+    </button>
+  </div>
+
+  <!-- Result Container -->
+  <div id="resultContainer" class="result-container">
+    <div id="result" class="result-box"></div>
+  </div>
+
+  <!-- Scanner Section -->
+  <div id="scanSection" class="scanner-container">
+    <video id="video" autoplay playsinline></video>
+    <div id="scannerFrame">
+      <div id="scannerLine"></div>
+    </div>
+  </div>
+
+  <!-- Hidden File Input -->
+  <input type="file" accept="image/*" id="fileInput" style="display:none" />
+
+  <!-- Audio Elements -->
+  <audio id="voiceStart" src="audio/ElevenLabs_2025-04-21T16_33_26_Rachel_pre_sp100_s50_sb75_se0_b_m2.mp3" preload="auto"></audio>
+  <audio id="beepSound" src="audio/mixkit-censorship-beep-1082.wav" preload="auto"></audio>
+  <audio id="errorSound" src="audio/buzzer-or-wrong-answer-20582.mp3" preload="auto"></audio>
+
+  <!-- jsQR Library -->
+  <script src="https://unpkg.com/jsqr@1.4.0/dist/jsQR.js"></script>
+
+  <!-- Your JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
